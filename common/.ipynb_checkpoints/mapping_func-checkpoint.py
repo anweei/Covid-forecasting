@@ -9,12 +9,10 @@ def mapping_func(list_over_countries, filepath=''):
         #level of zoom when map is first displayed
         zoom_start=2,
         tiles='OpenStreetMap', 
-        width='80%', 
+        #width='80%', 
     )
 
     m.add_child(folium.LatLngPopup())
-
-    marker_cluster = MarkerCluster().add_to(m)
 
     for country in list_over_countries:
         lat = extract_func(country,'Latitude', filepath)
@@ -22,6 +20,6 @@ def mapping_func(list_over_countries, filepath=''):
     
         popup = '<b>{}</b></br><i> </i>'.format(country)
     
-        folium.Marker([lat, lon], popup=popup, tooltip=country).add_to(marker_cluster)
+        folium.Marker([lat, lon], popup=popup).add_to(m)
     
     return m
