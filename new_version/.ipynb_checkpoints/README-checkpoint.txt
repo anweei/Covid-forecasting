@@ -1,4 +1,4 @@
-Project title: 
+Evaluation of clustering as apre-processing method for forecastingCovid-19 infection trends
 
 If a country could predict Covid-19 cases which will occur the next day(s), the county would be more prepared in the form of e.g. capacity in testing facilities. However, there doesn't exist a lot of Covid-19 data on infection trends for a forecasting method to be trained. Thus, if one could cluster countries based on their similarity of infection trends, more training data could be generated.
 
@@ -6,8 +6,18 @@ This project researches exactly this. The project develops clusters using both t
 
 The dataset used for this project, Data.csv, is downloaded from: 
 https://www.kaggle.com/sambelkacem/covid19-algeria-and-world-dataset
+The data.csv file was downloaded the 21st of September and had been updated on the downloadpage since. To reproduce the results, use the data.csv file stored in data -> data_raw.csv. This is the raw dataframe which was downloaded on the 21st of september.
 
 How to look at the project:
+In combination with project paper:
+    Raw data: data -> data_raw.csv
+    Pre-prossesing: pre_processing folder -> preprocessing notebook -> forecasting_format_cases per day notebook -> adding_features notebook. All resulting dataframes are stored in data folder.
+    Hyperparameter optimization: clustering -> determining_k. clustering -> parameter_selection -> k_means_parameter_testing, hierarchical_parameter_testing and cluster_evaluation_results
+    Alternative clustering appraoches: clustering -> parameter_selection -> gmm_forecasting_testing and k_shape_forecasting_testing.
+    Clustering (objective resutls): clustering-> clustering_k_means and clustering_hierarchical. All obtained result dataframes stored in results -> clustering_results
+    Forecasting (objective results): forecasting-> forecasting_w_catboost_all_countries, forecasting_w_catboost_clusters and forecasting_w_catboost_single_country. All obtained result dataframes stored in results -> forecasting_results
+    
+For reproduability:
 The project is build up of notebooks that have dependencies between them if execution without saved results is desirable. Following the described order to regenerate all results. 
     -pre_processing -> preprocessing
         Notebook goes through all the preprocessing steps that have been performed on the raw dataset.
@@ -19,7 +29,7 @@ The project is build up of notebooks that have dependencies between them if exec
     -clustering -> determining_k
         Notebook that determines optimal k using elbow method.
     -clustering -> parameter_selection (file)
-        Three notbooks, k_means_parameter_testing and hierarchical_parameter_testing both used to test different hyperparameter combinations for the two clustering methods. Clusters are formed and used as input to forecast to compare achieved accuracy. Results from all executions are stored in cluster_evaluation_results notebook. 
+        Five notbooks in total. Three notbooks, k_means_parameter_testing and hierarchical_parameter_testing both used to test different hyperparameter combinations for the two clustering methods. Clusters are formed and used as input to forecast to compare achieved accuracy. Results from all executions are stored in cluster_evaluation_results notebook. Last to notebooks, respectivly k_shape_forecasting_testing and gmm_forecasting_testing, used to test clustering based on k-shape and gmm in combination with forecasting.
     -clustering -> clustering_hierarchical and clustering_k_means
         Notebooks that perform respectively hierarchical and k-means clustering using the optimal parameters found in parameter_selection. Results saved to be used in forecasting.
    
