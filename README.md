@@ -5,9 +5,10 @@ If a country could predict Covid-19 infection trends, it would be more prepared 
 This project researches exactly this. The project develops clusters using both the K-means and Hierarchical Agglomerative Clustering (HAC) method. The forecasting is performed using the Catboost Regressor model. Countries are being clustered based on how similar their time series of infection trend are. To test the forecasts, four test countries were selected as randomly as possible, while still making sure that other conditions remained as fair as possible. Thus, each distinct cluster only contains one of the four test countries each. Thus, if test country 1 belongs to cluster 1 in K-means, then test country 2 could only belong to either cluster 2, 3, or 4 in K-means. To evaluate, the forecasting based on clustering are compared with the forecast based on both all countries as an input and a single country as an input.
 
 
-The dataset used for this project, Data.csv, is downloaded from: 
-https://www.kaggle.com/sambelkacem/covid19-algeria-and-world-dataset  
-The data.csv file was downloaded the 21st of September and had been updated on the downloadpage since. To reproduce the results, use the data.csv file stored in data -> data_raw.csv. This is the raw dataframe which was downloaded on the 21st of September.
+The dataset used for this project, Data.csv, is downloaded from:   
+https://www.kaggle.com/sambelkacem/covid19-algeria-and-world-dataset   
+
+The Data.csv file was downloaded the 21st of September and had been updated on the downloadpage since. To reproduce the results, use the Data.csv file stored in data -> data_raw.csv. This is the raw dataframe which was downloaded on the 21st of September.
 
 ## How to look at the project:
 ### In combination with project paper:
@@ -18,7 +19,7 @@ The data.csv file was downloaded the 21st of September and had been updated on t
 * Clustering (objective resutls): clustering-> clustering_k_means and clustering_hierarchical. All obtained result dataframes stored in results -> clustering_results
 * Forecasting (objective results): forecasting-> forecasting_w_catboost_all_countries, forecasting_w_catboost_clusters and forecasting_w_catboost_single_country. All obtained result dataframes stored in results -> forecasting_results
     
-### For reproduability:
+### For reproducibility:
 The project is build up of notebooks that have dependencies between them if execution without saved results is desirable. Following the described order to regenerate all results. 
 * pre_processing -> preprocessing
     * Notebook goes through all the preprocessing steps that have been performed on the raw dataset.
@@ -41,7 +42,7 @@ The project is build up of notebooks that have dependencies between them if exec
 
 All clustering and forecasting results from running respectively notebooks (parquet files) can be found in 'results' folder, results (parquet files) of running notebooks in pre_processing folder can be found in 'data' folder.
 
-## Additional material:
+### Additional material:
 * misc -> cluster_mapping and cluster_mapping_func
     * Notebook with function to generate map of cluster results
 * misc -> country_mapping and country_mapping_func
