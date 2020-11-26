@@ -30,7 +30,7 @@ The project is build up of notebooks that have dependencies between them if exec
 * clustering -> determining_k
     * Notebook that determines optimal k using elbow method.
 * clustering -> parameter_selection (file)
-    * Five notbooks in total. Three notbooks, k_means_parameter_testing and hierarchical_parameter_testing both used to test different hyperparameter combinations for the two clustering methods. Clusters are formed and used as input to forecast to compare achieved accuracy. Results from all executions are stored in cluster_evaluation_results notebook. Last to notebooks, respectivly k_shape_forecasting_testing and gmm_forecasting_testing, used to test clustering based on k-shape and gmm in combination with forecasting.
+    * Five notbooks in total. Two notbooks, k_means_parameter_testing and hierarchical_parameter_testing are both used to test different hyperparameter combinations for the two clustering methods. Clusters are formed and used as input into the forecast in order to compare achieved accuracy. Results from all executions are stored in cluster_evaluation_results notebook. Last two notebooks, k_shape_forecasting_testing and gmm_forecasting_testing, are used to test clustering based on k-shape and gmm in combination with forecasting.
 * clustering -> clustering_hierarchical and clustering_k_means
     * Notebooks that perform respectively hierarchical and k-means clustering using the optimal parameters found in parameter_selection. Results saved to be used in forecasting.
 * forecasting -> forecasting_w_catboos_all_countries
